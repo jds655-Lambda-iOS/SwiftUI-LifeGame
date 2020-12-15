@@ -2,24 +2,20 @@
 
 The Conway's Game of Life that build with SwiftUI.
 
-|iOS|macOS|
-|--|--|
-|<img src="./Image/anime-ios.gif" width="200px">|<img src="./Image/screenshot-mac.png" width="200px">|
+|iOS|iPad|macOS|
+|--|--|--|
+|<img src="./Image/screenshot-ios.png" width="160px">|<img src="./Image/screenshot-ipad.png" width="200px">|<img src="./Image/screenshot-mac.png" width="400px">|
 
+## Requirements
 
-## TODO
+- Xcode 12.2 (beta 2)
+- macOS Catalina
+  - **macOS Big Sur (beta 9) is required when build and run macOS app**
 
-- [x] Support Dark mode
-- [x] Support Mac
-- [ ] Support iPad app (apply proper layout)
-- [ ] Feature: Save to presets
-- [ ] UITests
+## Development
 
-## Architecture
-
-Like MVVM.
-
-![Architecture](./Image/architecture.png)
+Open `LifeGameApp.xcodeproj` then build `LifeGameApp (iOS)` or `LifeGameApp (macOS)` scheme.  
+(Please change signing settings when neeeded)
 
 ## Dependency
 
@@ -28,7 +24,3 @@ Like MVVM.
 ## Author
 
 Yusuke Hosonuma / [@tobi462](https://twitter.com/tobi462)
-
-## License
-
-MIT license.

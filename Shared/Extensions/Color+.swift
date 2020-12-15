@@ -7,6 +7,27 @@
 
 import SwiftUI
 
+extension Color {
+    static var placeholderText: Color {
+        #if os(macOS)
+        return Color(NSColor.placeholderTextColor)
+        #else
+        return Color(UIColor.placeholderText)
+        #endif
+    }
+    
+    // Note:
+    // beta 5 から標準で`cgColor`プロパティが用意されたが、返却値がOptional型になっており、
+    // 固定値の`Color`でも変換できないことがあったので、解決されるまでは現状のextensionを残す。（beta 6）❗
+    var cgColor: CGColor {
+        #if os(macOS)
+        return NSColor(self).cgColor
+        #else
+        return UIColor(self).cgColor
+        #endif
+    }
+}
+
 extension Color: RawRepresentable {
     public var rawValue: Data {
         #if os(macOS)

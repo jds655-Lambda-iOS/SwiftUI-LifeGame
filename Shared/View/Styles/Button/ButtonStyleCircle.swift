@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ButtonStyleCircle: ButtonStyle {
+    var color: Color = .accentColor
+    
     func makeBody(configuration: Configuration) -> some View {
-        Button(configuration: configuration)
+        Button(configuration: configuration, background: color)
     }
     
     struct Button: View {
         var configuration: Configuration
+        var background: Color
         var foreground = Color.white
-        var background = Color.accentColor
         
         var borderColor: Color {
             colorScheme == .dark ? Color.black : Color.white
@@ -29,7 +31,7 @@ struct ButtonStyleCircle: ButtonStyle {
                 .fill(background.opacity(!isEnabled ? 0.5 : configuration.isPressed ? 0.8 : 1))
                 .overlay(Circle().strokeBorder(borderColor, lineWidth: 2).padding(2))
                 .overlay(configuration.label.foregroundColor(foreground))
-                .frame(width: 75, height: 75)
+                .frame(width: 64, height: 64)
         }
     }
 }
